@@ -11,6 +11,12 @@ echo GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
         [
+            'header' => 'Идентификатор',
+            'attribute' => 'id',
+            'format' => 'text'
+        ],
+        [
+            'header' => 'Имя каталога',
             'attribute' => 'name',
             'format' => 'text',
 
@@ -18,17 +24,13 @@ echo GridView::widget([
             return "<div style=\"margin-left: ".($model->level*20)."px\">".Html::encode($model->name)."</div>"; }
 
         ],
-        [
-            'header' => 'Income id',
-            'attribute' => 'id',
-            'format' => 'text'
-        ],
-        [
+        /*[
             'header' => 'Parent income id',
             'attribute' => 'parent_id',
             'format' => 'text'
-        ],
+        ],*/
         [
+            'header' => 'Дата создания',
             'attribute' => 'date',
             'format' => ['date', 'php:d.m.Y']
         ],
